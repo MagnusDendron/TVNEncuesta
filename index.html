@@ -1,0 +1,420 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <title>TVN Encuesta</title>
+
+  <!--Javascripts-->
+  <script src="https://unpkg.com/@mongodb-js/charts-embed-dom@beta"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"
+    integrity="sha512-lzilC+JFd6YV8+vQRNRtU7DOqv5Sa9Ek53lXt/k91HZTJpytHS1L6l1mMKR9K6VVoDt4LiEXaa6XBrYk1YhGTQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<style>
+  #g-muestra,
+  #sexo,
+  #g-edades,
+  #g-nseFamiliar,
+  #g-estudios,
+  #g-situacionLaboral,
+  #g-situacionesGenerales,
+  #g-situacionFutura,
+  #g-problemas,
+  #g-problemasPersonales,
+  #g-problemasPresidente,
+  #g-candidatos {
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+  }
+
+  /* Small devices (landscape phones, 576px and up)*/
+  @media (min-width: 576px) {
+
+    #g-muestra,
+    #sexo,
+    #g-edades,
+    #g-nseFamiliar,
+    #g-estudios,
+    #g-situacionLaboral,
+    #g-situacionesGenerales,
+    #g-situacionFutura,
+    #g-problemas,
+    #g-problemasPersonales,
+    #g-problemasPresidente,
+    #g-candidatos {
+      width: 90%;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+
+    #g-muestra,
+    #sexo,
+    #g-edades,
+    #g-nseFamiliar,
+    #g-estudios,
+    #g-situacionLaboral,
+    #g-situacionesGenerales,
+    #g-situacionFutura,
+    #g-problemas,
+    #g-problemasPersonales,
+    #g-problemasPresidente,
+    #g-candidatos {
+      width: 90%;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+
+    #g-muestra,
+    #sexo,
+    #g-edades,
+    #g-nseFamiliar,
+    #g-estudios,
+    #g-situacionLaboral,
+    #g-situacionesGenerales,
+    #g-situacionFutura,
+    #g-problemas,
+    #g-problemasPersonales,
+    #g-problemasPresidente,
+    #g-candidatos {
+      width: 94%;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+  }
+
+  /* X-Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+
+    #g-muestra,
+    #sexo,
+    #g-edades,
+    #g-nseFamiliar,
+    #g-estudios,
+    #g-situacionLaboral,
+    #g-situacionesGenerales,
+    #g-situacionFutura,
+    #g-problemas,
+    #g-problemasPersonales,
+    #g-problemasPresidente,
+    #g-candidatos {
+      width: 98%;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+  }
+
+  /* XX-Large devices (larger desktops, 1400px and up) */
+  @media (min-width: 1400px) {
+
+    #g-muestra,
+    #sexo,
+    #g-edades,
+    #g-nseFamiliar,
+    #g-estudios,
+    #g-situacionLaboral,
+    #g-situacionesGenerales,
+    #g-situacionFutura,
+    #g-problemas,
+    #g-problemasPersonales,
+    #g-problemasPresidente,
+    #g-candidatos {
+      width: 96%;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+    }
+  }
+</style>
+
+<body>
+  <div class="container-fluid g-2">
+    <nav class="navbar bg-light">
+      <form class="container-fluid justify-content-start">
+        <button class="btn btn-outline-success me-2" type="button">Main button</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+      </form>
+    </nav>
+    <div class="row pt-3 pb-3 px-3 m-3">
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <select class="form-select" data-style="btn-primary" aria-label="Sexo">
+          <option selected="">Sexo</option>
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
+          <option value="Prefiero no especificarlo">No especificado</option>
+        </select>
+      </div>
+      <!-- Example single danger button -->
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Sexo
+          </button>
+          <ul class="dropdown-menu">
+
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('D1','Hombre');">Hombre</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('D1','Mujer');">Mujer</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('D1','Prefiero no especificarlo');">No
+                especificado</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('D1','Todos');">Todos los datos</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Example single primary button -->
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Edades
+          </button>
+          <ul class="dropdown-menu">
+
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','18-25');">18-25</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','26-30');">26-30r</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','31-35');">31-35</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','36-40');">36-40</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','41-45');">41-45</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','46-50');">46-50</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','51-55');">51-55</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','56-60');">56-60</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','61-65');">61-65</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','66-70');">66-70</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','70-75');">70-75</a></li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','Mas de 75 años');">M&aacute;s de 75 a&#241;os</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" onclick="filtroGenerico('Edades','Todos');">Todos los datos</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="row g-2">
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-muestra"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="sexo"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-edades"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-nseFamiliar"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-estudios"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-situacionLaboral"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-situacionesGenerales"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-situacionFutura"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-problemas"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-problemasPersonales"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-problemasPresidente"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2">
+        <div id="g-candidatos"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <button onclick="refresh()">Refresh</button>
+  <button onclick="filter()">Only in USA</button>
+  <!-- 
+    <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-mongodb-gtywi/embed/charts?id=7f535ee7-2074-4350-9f94-237277b94391&theme=light"></iframe>
+    -->
+  <script>
+    const filterJSON = '{ "D1":  "Hombre" }';
+    let filterDBJSON = {  };
+
+    console.log(filterDBJSON);
+
+    const sdk = new ChartsEmbedSDK({
+      baseUrl: 'https://charts.mongodb.com/charts-tvn-sombq',
+      showAttribution: false
+    });
+
+    const g_muestra = sdk.createChart(
+      {
+        chartId: '64ff9621-e9a5-4799-846e-05aaa80cc1ec',
+        background: '#000000',
+        theme: 'dark'
+      });
+
+    const sexo = sdk.createChart(
+      {
+        chartId: '64ff96a9-242e-4e8f-8e56-89b34af1014c',
+        background: 'transparent'
+      });
+
+    const g_edades = sdk.createChart(
+      {
+        chartId: '64ff98bc-cc8a-46ba-8c8e-e800f85a043a',
+        background: 'transparent'
+      });
+
+    const g_nseFamiliar = sdk.createChart(
+      {
+        chartId: '64ff99db-a910-4433-88db-96214d351c67',
+        background: 'transparent'
+      });
+
+    const g_estudios = sdk.createChart(
+      {
+        chartId: '64ff9b38-8f78-4761-8a11-17a2609b0ecf',
+        background: 'transparent'
+      });
+
+    const g_situacionLaboral = sdk.createChart(
+      {
+        chartId: '64ff9cfd-c6ce-42d5-8e30-14cd1ebd5821',
+        background: 'transparent'
+      });
+
+    const g_situacionesGenerales = sdk.createChart(
+      {
+        chartId: '64ffa075-a910-4778-8fa1-96214d3bfe82',
+        background: 'transparent'
+      });
+
+    const g_situacionFutura = sdk.createChart(
+      {
+        chartId: '64ffa18d-8f78-44a3-8638-17a260a180d1',
+        background: 'transparent'
+      });
+
+    const g_problemas = sdk.createChart(
+      {
+        chartId: '64ffa375-a910-46da-8f12-96214d3e9c40',
+        background: 'transparent'
+      });
+
+    const g_problemasPersonales = sdk.createChart(
+      {
+        chartId: '64ffa40e-f103-40c5-8842-b45402d4ec78',
+        background: 'transparent'
+      });
+
+    const g_problemasPresidente = sdk.createChart(
+      {
+        chartId: '64ffa527-ff4d-4d8b-8563-0b4856ce469c',
+        background: 'transparent'
+      });
+
+
+    const g_candidatos = sdk.createChart(
+      {
+        chartId: '64ffa5e7-cc8a-445b-81df-e800f866b7f1',
+        background: 'transparent'
+      });
+
+
+
+
+
+    //Render Chart
+    g_muestra.render(document.getElementById('g-muestra'));
+    sexo.render(document.getElementById('sexo'));
+    g_edades.render(document.getElementById('g-edades'));
+    g_nseFamiliar.render(document.getElementById('g-nseFamiliar'));
+    g_estudios.render(document.getElementById('g-estudios'));
+    g_situacionLaboral.render(document.getElementById('g-situacionLaboral'));
+    g_situacionesGenerales.render(document.getElementById('g-situacionesGenerales'));
+    g_situacionFutura.render(document.getElementById('g-situacionFutura'));
+    g_problemas.render(document.getElementById('g-problemas'));
+    g_problemasPersonales.render(document.getElementById('g-problemasPersonales'));
+    g_problemasPresidente.render(document.getElementById('g-problemasPresidente'));
+    g_candidatos.render(document.getElementById('g-candidatos'));
+
+    function refresh() {
+      delete filterDBJSON['D1'];
+      console.log(filterDBJSON);
+      g_muestra.setFilter(filterDBJSON);
+      sexo.setFilter(filterDBJSON);
+
+      g_muestra.refresh();
+      sexo.refresh();
+    }
+
+    function filter() {
+      filterDBJSON.Edades = "56-60";
+      console.log(filterDBJSON);
+      g_muestra.setFilter(filterDBJSON);
+      sexo.setFilter(filterDBJSON);
+    }
+
+    //Filtros a los gráficos
+
+    function filtroGenerico(propiedad, valor) {
+      delete filterDBJSON[propiedad];
+      console.log(propiedad);
+      if (valor != 'Todos')
+        filterDBJSON[propiedad] = valor;
+      console.log(filterDBJSON);
+      filtroAplicado(filterDBJSON);
+
+    }
+
+    function filtroAplicado(dbFilterJSON) {
+      g_muestra.setFilter(dbFilterJSON);
+      sexo.setFilter(dbFilterJSON);
+      g_edades.setFilter(dbFilterJSON);
+      g_nseFamiliar.setFilter(dbFilterJSON);
+      g_estudios.setFilter(dbFilterJSON);
+      g_situacionLaboral.setFilter(dbFilterJSON);
+      g_situacionesGenerales.setFilter(dbFilterJSON);
+      g_situacionFutura.setFilter(dbFilterJSON);
+      g_problemas.setFilter(dbFilterJSON);
+      g_problemasPersonales.setFilter(dbFilterJSON);
+      g_problemasPresidente.setFilter(dbFilterJSON);
+      g_candidatos.setFilter(dbFilterJSON);
+    }
+
+  </script>
+</body>
+
+</html>
