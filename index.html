@@ -7,6 +7,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://www.tvn-2.com/tvn/app.h-d7e48333bcf88eb52485.css">
+  <link rel="shortcut icon" href="https://static.tvn-2.com/tvn/public/file/2022/0623/19/favicon-ca24534.ico" type="image/x-icon">
   <title>TVN Encuesta</title>
 
   <!--Javascripts-->
@@ -41,6 +43,17 @@
   #fs-FiltroAplicado {
     display: none;
   }
+
+  button[id^="btnFltr-"] {
+    color: #ffffff !important;
+    font-weight: bold;
+  }
+
+  #btnFltr-Candidatos {
+    color: #000000 !important;
+    font-weight: bold;
+  }
+
 
   fieldset.scheduler-border {
     border: 1px groove #ddd !important;
@@ -177,20 +190,240 @@
 
 <body>
   <div class="container-fluid g-2">
-    <nav class="navbar bg-light">
-      <form class="container-fluid justify-content-start">
-        <button class="btn btn-outline-success me-2" type="button">Main button</button>
-        <button class="btn btn-sm btn-outline-secondary fa-solid fa-user" type="button">Smaller button</button>
-        <i class="bi bi-bar-chart-fill"></i>
-      </form>
-    </nav>
+
+    <!--Header-->
+    <div class="top_container">
+      <nav aria-label="Saltar al contenido"><a href="#content-body" tabindex="0" class="sr-only gl-accessibility">Ir al
+          contenido</a></nav>
+      <header class="bbnx-header tvn"><button aria-expanded="false" aria-label="Obrir navegació" class="burger"><span
+            class="sr-only">Obrir navegació</span> <span class="bar"></span> <span class="bar"></span> <span
+            class="bar"></span></button> <a href="/" title="Ir a Tvn Panamá" class="logo">
+          <h1><span class="hidden-text">Tvn Panamá</span> <svg width="48" height="48" viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M23.885 0C10.679 0 0 10.73 0 24c0 13.236 10.68 24 23.885 24 13.172 0 23.884-10.73 23.884-24-.033-13.27-10.712-24-23.884-24zM38.37 31.549v-7.414c0-1.794-.843-2.674-2.594-2.674-1.786 0-3.302 1.016-3.302 3.791v6.33h-3.84V20.379H28.6l-4.851 11.17h-4.38l-4.21-10.222h-3.336v6.093c0 1.015.27 1.354 1.28 1.354.674 0 1.28-.034 1.887-.102v2.878c-.707.101-2.156.237-3.032.237-3.638 0-4.009-1.524-4.009-3.86v-6.6H5.56v-2.877h2.425v-4.063h3.84v4.063h6.536l3.2 9.173 3.538-9.173h7.276v1.895h.034c.707-1.083 2.526-2.234 4.783-2.234 1.988 0 5.02.846 5.02 4.705v8.7h-3.84v.034z"
+                fill="#058" fill-rule="nonzero"></path>
+            </svg></h1>
+        </a>
+        <div id="burgerMenu"><button aria-expanded="false" aria-label="Tancar navegació" class="close"><svg height="10"
+              viewBox="0 0 12 10" width="12" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m17 8.00714286-1.0071429-1.00714286-3.9928571 3.9928571-3.99285714-3.9928571-1.00714286 1.00714286 3.9928571 3.99285714-3.9928571 3.9928571 1.00714286 1.0071429 3.99285714-3.9928571 3.9928571 3.9928571 1.0071429-1.0071429-3.9928571-3.9928571z"
+                transform="translate(-6 -7)"></path>
+            </svg></button> <a href="/" aria-hidden="true" class="logo"><svg width="48" height="48" viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M23.885 0C10.679 0 0 10.73 0 24c0 13.236 10.68 24 23.885 24 13.172 0 23.884-10.73 23.884-24-.033-13.27-10.712-24-23.884-24zM38.37 31.549v-7.414c0-1.794-.843-2.674-2.594-2.674-1.786 0-3.302 1.016-3.302 3.791v6.33h-3.84V20.379H28.6l-4.851 11.17h-4.38l-4.21-10.222h-3.336v6.093c0 1.015.27 1.354 1.28 1.354.674 0 1.28-.034 1.887-.102v2.878c-.707.101-2.156.237-3.032.237-3.638 0-4.009-1.524-4.009-3.86v-6.6H5.56v-2.877h2.425v-4.063h3.84v4.063h6.536l3.2 9.173 3.538-9.173h7.276v1.895h.034c.707-1.083 2.526-2.234 4.783-2.234 1.988 0 5.02.846 5.02 4.705v8.7h-3.84v.034z"
+                fill="#058" fill-rule="nonzero"></path>
+            </svg></a>
+          <nav id="burgerNav" aria-label="Navegació principal">
+            <ul class="menu">
+              <li class="menu-item"><a title="Noticias" tabindex="0" class="menu-item-title">
+                  Noticias
+                  <span class="menu-item-icon"><svg height="14" viewBox="0 0 9 14" width="9"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="m0 1.645 5.56275304 5.355-5.56275304 5.355 1.71255061 1.645 7.28744939-7-7.28744939-7z">
+                      </path>
+                    </svg></span></a>
+                <ul aria-expanded="true" class="menu-item-children">
+                  <li><a title="Nacionales" href="https://www.tvn-2.com/nacionales/" class="menu-item-children-title">
+                      Nacionales
+                    </a></li>
+                  <li><a title="Tu Decisión 2024" href="https://www.tvn-2.com/tu-decision-2024/"
+                      class="menu-item-children-title">
+                      Tu Decisión 2024
+                    </a></li>
+                  <li><a title="Mundo" href="https://www.tvn-2.com/mundo/" class="menu-item-children-title">
+                      Mundo
+                    </a></li>
+                  <li><a title="Exclusivo" href="https://www.tvn-2.com/contenido-exclusivo/"
+                      class="menu-item-children-title">
+                      Exclusivo
+                    </a></li>
+                  <li><a title="Videos" href="https://www.tvn-2.com/videos/" class="menu-item-children-title">
+                      Videos
+                    </a></li>
+                </ul>
+              </li>
+              <li class="menu-item"><a title="Show TVN" href="https://www.tvn-2.com/entretenimiento/"
+                  class="menu-item-title">
+                  Show TVN
+                </a></li>
+              <li class="menu-item"><a title="Deportes" href="https://www.tvn-2.com/tvmax/" class="menu-item-title">
+                  Deportes
+                  <span class="menu-item-icon"><svg height="14" viewBox="0 0 9 14" width="9"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="m0 1.645 5.56275304 5.355-5.56275304 5.355 1.71255061 1.645 7.28744939-7-7.28744939-7z">
+                      </path>
+                    </svg></span></a>
+                <ul aria-expanded="true" class="menu-item-children">
+                  <li><a title="Béisbol Nacional" href="https://www.tvn-2.com/tvmax/beisbol-nacional/"
+                      class="menu-item-children-title">
+                      Béisbol Nacional
+                    </a></li>
+                  <li><a title="LPF" href="https://www.tvn-2.com/tvmax/lpf/" class="menu-item-children-title">
+                      LPF
+                    </a></li>
+                  <li><a title="Somos La Sele" href="https://www.tvn-2.com/tvmax/somos-la-sele/"
+                      class="menu-item-children-title">
+                      Somos La Sele
+                    </a></li>
+                  <li><a title="Fútbol Internacional" href="https://www.tvn-2.com/tvmax/futbol-internacional/"
+                      class="menu-item-children-title">
+                      Fútbol Internacional
+                    </a></li>
+                  <li><a title="Béisbol Internacional" href="https://www.tvn-2.com/tvmax/beisbol/mlb/"
+                      class="menu-item-children-title">
+                      Béisbol Internacional
+                    </a></li>
+                  <li><a title="Más Deportes" href="https://www.tvn-2.com/tvmax/mas-deportes/"
+                      class="menu-item-children-title">
+                      Más Deportes
+                    </a></li>
+                </ul>
+              </li>
+              <li class="menu-item"><a title="Contenidos Especiales" tabindex="0" class="menu-item-title">
+                  Contenidos Especiales
+                  <span class="menu-item-icon"><svg height="14" viewBox="0 0 9 14" width="9"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="m0 1.645 5.56275304 5.355-5.56275304 5.355 1.71255061 1.645 7.28744939-7-7.28744939-7z">
+                      </path>
+                    </svg></span></a>
+                <ul aria-expanded="true" class="menu-item-children">
+                  <li><a title="Tu Hogar" href="https://tuhogar.tvn-2.com/" target="_blank" rel="noreferrer"
+                      class="menu-item-children-title">
+                      Tu Hogar
+                    </a></li>
+                  <li><a title="A Clases con TVN" href="https://aclasescon.tvn-2.com" target="_blank" rel="noreferrer"
+                      class="menu-item-children-title">
+                      A Clases con TVN
+                    </a></li>
+                  <li><a title="Nos Fuimos" href="https://nosfuimos.tvn-2.com" target="_blank" rel="noreferrer"
+                      class="menu-item-children-title">
+                      Nos Fuimos
+                    </a></li>
+                </ul>
+              </li>
+              <li class="menu-item"><a title="Novelas" href="https://www.tvn-2.com/novelas/" class="menu-item-title">
+                  Novelas
+                </a></li>
+              <li class="menu-item"><a title="Programas" tabindex="0" class="menu-item-title">
+                  Programas
+                  <span class="menu-item-icon"><svg height="14" viewBox="0 0 9 14" width="9"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="m0 1.645 5.56275304 5.355-5.56275304 5.355 1.71255061 1.645 7.28744939-7-7.28744939-7z">
+                      </path>
+                    </svg></span></a>
+                <ul aria-expanded="true" class="menu-item-children">
+                  <li><a title="La Máscara" href="https://www.tvn-2.com/la-mascara/" class="menu-item-children-title">
+                      La Máscara
+                    </a></li>
+                  <li><a title="Héroes Por Panamá" href="https://www.tvn-2.com/produccion/heroes-por-panama/"
+                      class="menu-item-children-title">
+                      Héroes Por Panamá
+                    </a></li>
+                  <li><a title="De Frente con Sabrina Bacal" href="https://www.tvn-2.com/de-frente/"
+                      class="menu-item-children-title">
+                      De Frente con Sabrina Bacal
+                    </a></li>
+                  <li><a title="Casi La Cinco" href="https://www.tvn-2.com/casi-las-cinco/"
+                      class="menu-item-children-title">
+                      Casi La Cinco
+                    </a></li>
+                  <li><a title="Lotería" href="https://www.tvn-2.com/la-loteria/" class="menu-item-children-title">
+                      Lotería
+                    </a></li>
+                  <li><a title="Jelou" href="https://www.tvn-2.com/jelou/" class="menu-item-children-title">
+                      Jelou
+                    </a></li>
+                  <li><a title="Hecho En Panamá" href="https://www.tvn-2.com/hecho-en-panama/"
+                      class="menu-item-children-title">
+                      Hecho En Panamá
+                    </a></li>
+                  <li><a title="Mesa De Periodistas" href="https://www.tvn-2.com/tvnpass/radio/mesa-de-periodistas/"
+                      class="menu-item-children-title">
+                      Mesa De Periodistas
+                    </a></li>
+                  <li><a title="Radar" href="https://www.tvn-2.com/radar/" class="menu-item-children-title">
+                      Radar
+                    </a></li>
+                </ul>
+              </li>
+              <li class="menu-item"><a title="LA MÁSCARA" href="https://www.tvn-2.com/la-mascara/"
+                  class="menu-item-title">
+                  LA MÁSCARA
+                </a></li>
+            </ul>
+          </nav>
+        </div> <button aria-expanded="false" aria-label="Busca continguts" class="search"><svg height="24"
+            viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m10.33 2c4.611-.018 8.367 3.718 8.395 8.35.002 1.726-.511 3.332-1.395 4.67l5.67 5.672-2.288 2.308-5.66-5.662c-1.337.916-2.95 1.454-4.69 1.462-4.612 0-8.352-3.751-8.362-8.384-.009-4.632 3.718-8.398 8.33-8.416zm.033 2.888c-3.022-.002-5.477 2.454-5.488 5.492-.011 3.039 2.426 5.513 5.448 5.533 2.95.019 5.371-2.305 5.514-5.24l.006-.221c.019-3.059-2.437-5.548-5.48-5.564z">
+            </path>
+          </svg></button>
+        <article class="md-live-video">
+          <h2 class="title"><a
+              href="https://www.tvnpass.com/?utm_source=WEB&amp;utm_medium=boton&amp;utm_campaign=envivo"
+              target="_blank">Huérfanas</a></h2> <a
+            href="https://www.tvnpass.com/?utm_source=WEB&amp;utm_medium=boton&amp;utm_campaign=envivo" title="En vivo"
+            target="_blank" rel="nofollow noreferrer" class="logo"><svg height="40" title="TVN plus"
+              viewBox="0 0 154 40" width="154" xmlns="http://www.w3.org/2000/svg">
+              <title>TVN plus</title>
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  d="m3.99252649 0h6.69041001l-.0041468 6.96969697h10.6301012l5.7721215 15.45454543 5.7721215-15.45454543h12.7630425v2.72727468s2.4267509-3.3402225 7.2874848-3.33333529c4.8607338.00688722 9.113876 2.72727273 9.113876 8.78787884v13.6363636h-6.3797132v-12.1212121c0-6.0606061-9.7594053-6.3636364-9.7404365 0 .0189687 6.3636363 0 12.1245413 0 12.1245413h-6.9084334v-18.1867746l-7.9585954 18.1834454h-7.5948967l-7.2911008-16.969697h-5.4767579s-.0084323 9.6969762 0 10.9090942c.0084323 1.2121179.3167873 1.5365244 1.6815891 1.6773515 1.3648019.140827 3.4942263 0 3.4942263 0l.0052204 4.6862816s-5.7854156.0110274-8.2105622 0c-2.42514657-.0110275-3.35102071-2.1932608-3.29857432-4.884454.05244639-2.6911931 0-12.3882733 0-12.3882733l-4.29632236-.0001104-.04318022-4.84837443h4.29632236z"
+                  fill="#fff"></path>
+                <g fill="#fec53e">
+                  <path
+                    d="m69.6124339 40h-3.9610135s0-14.2444664.0116672-22.1212121c.0116672-7.8767458 5.9260356-12.44827846 11.9915707-12.42424245 6.0655352.02403602 11.9866608 5.70262755 12.0083028 12.42424245.0216421 6.7216149-6.3353602 11.2966211-12.0083028 11.2121212s-7.6767794-2.3012547-8.0422244-3.030303zm8.0505904-14.5454545c4.4462184 0 8.0505905-3.5952892 8.0505905-8.0303031 0-.2931766-.0157506-.5826837-.0464539-.8677254-.4337589-4.0269108-3.8518355-7.16257761-8.0041366-7.16257761-4.4462183 0-8.0505904 3.59528911-8.0505904 8.03030301s3.6043721 8.0303031 8.0505904 8.0303031z">
+                  </path>
+                  <path
+                    d="m110.176399 29.0909091s-.144681-9.6969697 0-11.6711187c-.14703-5.3936646-3.500869-8.02585101-7.748171-8.03167636-4.2473025-.00582535-7.904533 3.50931726-7.904533 8.18764356 0 4.6783262 3.7511669 7.8787879 7.594897 7.8787879 3.843729 0 6.379713-2.1212122 6.809184-2.7272728v4.6067399c-1.206472.70891-3.281132 1.7067341-6.64881 1.7568965-5.6729428.0844999-11.4223533-4.4905063-11.4007112-11.2121212.021642-6.7216149 5.3351759-12.40020643 11.4007112-12.42424245 6.065535-.02403601 11.979903 4.54749665 11.991571 12.42424245.011667 7.8767457.011667 11.2121212.011667 11.2121212z">
+                  </path>
+                  <path
+                    d="m132.974625 6.06060606v3.42465753h-11.860523c-2.809072 0-2.496952 3.73599001-.312119 4.66998751 2.184833.9339976 4.057547 1.5566626 9.987809 3.7359901s4.681786 10.8966376-2.496952 10.8966376h-11.860524v-3.4387799s9.987826.0141224 12.172651 0 3.121182-3.0992027-.312127-4.6558652c-3.43331-1.5566625-4.681786-1.867995-9.67569-3.73599-4.993905-1.867995-4.993905-10.58530514 2.184833-10.89663764z">
+                  </path>
+                  <path
+                    d="m152.417561 6.06060606v3.42465753h-11.860524c-2.809071 0-2.496952 3.73599001-.312119 4.66998751 2.184834.9339976 4.057548 1.5566626 9.98781 3.7359901 5.930261 2.1793275 4.681785 10.8966376-2.496953 10.8966376h-11.860523v-3.4387799s9.987826.0141224 12.172651 0 3.121182-3.0992027-.312128-4.6558652c-3.433309-1.5566625-4.681785-1.867995-9.67569-3.73599s-4.993905-10.58530514 2.184833-10.89663764z">
+                  </path>
+                </g>
+              </g>
+            </svg> <small class="tvn-pass-link">En vivo</small></a>
+          <figure><a href="https://www.tvnpass.com/?utm_source=WEB&amp;utm_medium=boton&amp;utm_campaign=envivo"
+              title="En vivo: Huérfanas" target="_blank" rel="nofollow noreferrer"><img
+                src="https://static.tvn-2.com/clip/2e2d4769-76ce-473f-8371-e3dfea89a3c2_source-aspect-ratio_default_0.jpg"
+                alt="Huérfanas" height="80" width="142" class="loaded" data-was-processed="true"></a></figure>
+        </article>
+        <div id="searchLayer"><button class="close"><svg height="10" viewBox="0 0 12 10" width="12"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m17 8.00714286-1.0071429-1.00714286-3.9928571 3.9928571-3.99285714-3.9928571-1.00714286 1.00714286 3.9928571 3.99285714-3.9928571 3.9928571 1.00714286 1.0071429 3.99285714-3.9928571 3.9928571 3.9928571 1.0071429-1.0071429-3.9928571-3.9928571z"
+                transform="translate(-6 -7)"></path>
+            </svg></button> <a href="/" aria-hidden="true" title="Buscar contenidos" class="logo"><svg width="48"
+              height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M23.885 0C10.679 0 0 10.73 0 24c0 13.236 10.68 24 23.885 24 13.172 0 23.884-10.73 23.884-24-.033-13.27-10.712-24-23.884-24zM38.37 31.549v-7.414c0-1.794-.843-2.674-2.594-2.674-1.786 0-3.302 1.016-3.302 3.791v6.33h-3.84V20.379H28.6l-4.851 11.17h-4.38l-4.21-10.222h-3.336v6.093c0 1.015.27 1.354 1.28 1.354.674 0 1.28-.034 1.887-.102v2.878c-.707.101-2.156.237-3.032.237-3.638 0-4.009-1.524-4.009-3.86v-6.6H5.56v-2.877h2.425v-4.063h3.84v4.063h6.536l3.2 9.173 3.538-9.173h7.276v1.895h.034c.707-1.083 2.526-2.234 4.783-2.234 1.988 0 5.02.846 5.02 4.705v8.7h-3.84v.034z"
+                fill="#058" fill-rule="nonzero"></path>
+            </svg></a>
+          <div class="form"><input id="searchcontent" type="text" name="text" placeholder="Buscar contenidos"> <label
+              for="searchcontent" class="sr-only">Buscar contenidos</label> <button><svg height="24" viewBox="0 0 24 24"
+                width="24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m10.33 2c4.611-.018 8.367 3.718 8.395 8.35.002 1.726-.511 3.332-1.395 4.67l5.67 5.672-2.288 2.308-5.66-5.662c-1.337.916-2.95 1.454-4.69 1.462-4.612 0-8.352-3.751-8.362-8.384-.009-4.632 3.718-8.398 8.33-8.416zm.033 2.888c-3.022-.002-5.477 2.454-5.488 5.492-.011 3.039 2.426 5.513 5.448 5.533 2.95.019 5.371-2.305 5.514-5.24l.006-.221c.019-3.059-2.437-5.548-5.48-5.564z">
+                </path>
+              </svg></button> <!----></div>
+        </div>
+      </header>
+      <div class="aside-alert"></div>
+    </div>
+    <!--Fin Header-->
     <fieldset class="border rounded-3  px-3 m-2 bg-light text-dark">
       <legend class="float-none w-auto px-4"><b>Filtros</b></legend>
       <div class="row g-2 m-2">
         <!-- Filtro 1  -->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+            <button id="btnFltr-Sexo" type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
               aria-expanded="false">
               Sexo
             </button>
@@ -211,7 +444,7 @@
         <!-- Filtro 3 -->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+            <button id="btnFltr-Edades" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
               aria-expanded="false">
               Edades
             </button>
@@ -240,8 +473,8 @@
         <!-- Filtro 3  -->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-Provincias" type="button" class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Provincias
             </button>
             <ul class="dropdown-menu">
@@ -272,8 +505,8 @@
         <!--Filtro 4-->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-NSE_Familiar" type="button" class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               NSE Familiar
             </button>
             <ul class="dropdown-menu">
@@ -320,8 +553,8 @@
         <!--Filtro 5-->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-Situacion_Economica" type="button" class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Situaci&oacute;n econ&oacute;mica
             </button>
             <ul class="dropdown-menu">
@@ -350,8 +583,8 @@
         <!--Filtro 6-->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-Situacion_Pais" type="button" class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Situaci&oacute;n pa&iacute;s
             </button>
             <ul class="dropdown-menu">
@@ -378,8 +611,8 @@
         <!--Filtro 6-->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-Situacion_Hogar" type="button" class="btn btn-primary dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Situaci&oacute;n hogar
             </button>
             <ul class="dropdown-menu">
@@ -406,8 +639,8 @@
         <!--Filtro 7-->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-Medios_Comunicacion" type="button" class="btn btn-success dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Medios de comunicaci&oacute;n
             </button>
             <ul class="dropdown-menu">
@@ -440,8 +673,8 @@
         <!--Filtro 8-->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-Nivel_Estudios" type="button" class="btn btn-secondary dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Nivel de estudios
             </button>
             <ul class="dropdown-menu">
@@ -478,8 +711,8 @@
         <!--Filtro 9-->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-Situacion_Laboral" type="button" class="btn btn-secondary dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Situaci&oacute;n laboral
             </button>
             <ul class="dropdown-menu">
@@ -520,8 +753,8 @@
         <!--Filtro 10-->
         <div class="col-auto m-1">
           <div class="btn-group">
-            <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button id="btnFltr-Candidatos" type="button" class="btn btn-warning dropdown-toggle"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Candidatos
             </button>
             <ul class="dropdown-menu">
@@ -621,7 +854,8 @@
         </div>
         <!--Situación Económica-->
         <div id="fad-Situacion_economica" class="col-auto m-1">
-          <button type="button" class="btn btn-outline-primary" onclick="filtroGenerico('Situacion_economica','Todos');">
+          <button type="button" class="btn btn-outline-primary"
+            onclick="filtroGenerico('Situacion_economica','Todos');">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin"
               viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" />
@@ -703,48 +937,142 @@
         </div>
       </div>
     </fieldset>
-  </div>
-  <div class="row g-2">
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-muestra" class="rounded-3"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="sexo" class="rounded-3"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-edades"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-nseFamiliar"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-estudios"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-situacionLaboral"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-situacionesGenerales"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-situacionFutura"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-problemas"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-problemasPersonales"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-problemasPresidente"></div>
-    </div>
-    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
-      <div id="g-candidatos"></div>
-    </div>
 
-  </div>
+    <div class="row g-2">
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-muestra" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="sexo" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-edades" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-nseFamiliar" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-estudios" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-situacionLaboral" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-situacionesGenerales" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-situacionFutura" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-problemas" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-problemasPersonales" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-problemasPresidente" class="rounded-3"></div>
+      </div>
+      <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 g-2 rounded-3">
+        <div id="g-candidatos" class="rounded-3"></div>
+      </div>
 
+    </div>
   </div>
+  <!--Footer-->
+  <footer class="bbnx-footer">
+    <div class="content">
+      <div class="social">
+        <div class="media">
+          <div class="header">Síguenos:</div>
+          <ul class="footer-list">
+            <li><a title="Anar a Facebook" href="https://www.facebook.com/tvnpanama" target="follow" rel="nofollow"><svg
+                  height="20" viewBox="0 0 10 20" width="10" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" fill-rule="evenodd">
+                    <path d="m-7-2h24v24h-24z"></path>
+                    <path
+                      d="m10 .14443178v3.17243126h-1.81673987c-.66373841 0-1.11151782.14443178-1.34333822.43329533-.23060029.28886355-.34651049.72089193-.34651049 1.29861903v2.27163309h3.39067838l-.45143973 3.55758271h-2.93923865v9.1220068h-3.54197169v-9.1220068h-2.95143973v-3.55758271h2.95143973v-2.62131002c0-1.48992779.40141532-2.64538199 1.20302586-3.46762955.80283065-.82098061 1.87164471-1.23147092 3.20644217-1.23147092 1.13469985 0 2.01317716.04814393 2.63909224.14443178"
+                      fill="#3b5998"></path>
+                  </g>
+                </svg></a></li>
+            <li><a title="Anar a Instagram" href="https://www.instagram.com/tvnnoticias/" target="follow"
+                rel="nofollow"><svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="#50514f" fill-rule="evenodd">
+                    <path
+                      d="m9.9999802 0c2.7158567 0 3.056361.01151157 4.1229673.06017771 1.0644231.04854707 1.7913191.21760834 2.4274325.46482919.6575884.25551711 1.2152643.59745038 1.7711937 1.15337973.555969.55596905.8978626 1.11364498 1.1534194 1.77119369.2472209.63611338.4162821 1.36300937.4648292 2.42743247.0486661 1.06660633.0601777 1.40715027.0601777 4.12296741 0 2.7158567-.0115116 3.0564007-.0601777 4.123007-.0485471 1.0643834-.2176083 1.7913191-.4648292 2.4273928-.2555568.6575884-.5974504 1.2152643-1.1534194 1.7711937-.5559294.555969-1.1136053.8978626-1.7711937 1.1534591-.6361134.2471812-1.3630094.4162424-2.4274325.4648292-1.0666063.0486264-1.4071106.060138-4.1229673.060138-2.71581714 0-3.05640078-.0115116-4.12296741-.060138-1.0644231-.0485868-1.79131909-.217648-2.42743247-.4648292-.65754871-.2555965-1.21526434-.5974901-1.77119369-1.1534591-.55596904-.5559294-.89786262-1.113645-1.15341943-1.7711937-.24722085-.6360737-.41624242-1.3630094-.46482918-2.4273928-.04866615-1.0666063-.06013802-1.4071503-.06013802-4.123007 0-2.71585684.01147187-3.05636108.06013802-4.12296741.04858676-1.0644231.21760833-1.79131909.46482918-2.42743247.25555681-.65754871.59745039-1.21522464 1.15341943-1.77119369.55592935-.55592935 1.11364498-.89786262 1.77119369-1.15337973.63611338-.24722085 1.36300937-.41628212 2.42743247-.46482919 1.06656663-.04866614 1.40715027-.06017771 4.12296741-.06017771zm3.3156766 1.82981967c-.5863469-.02020074-1.2008906-.02673723-2.7598051-.02784252h-1.1117432c-1.55891454.00110529-2.17345974.00764178-2.75982112.02784252l-.19566672.00725096c-.16428035.00648302-.33424083.01409097-.52951848.02300031-.97495043.04449816-1.50448257.2074067-1.85685564.34435466-.46673454.18140644-.7998952.39810178-1.14980718.74805346-.34991198.34991197-.56664702.68303294-.74805345 1.14980718-.13690827.35237307-.29981681.88186551-.34431497 1.85685563-.00890934.19527031-.01651729.36522616-.02300031.52950359l-.00725096.19566398c-.02020074.58635524-.02673723 1.2009113-.02784252 2.75980666v1.1117363c.00110529 1.558918.00764178 2.1734804.02784252 2.7598375l.00725096.1956644c.00648302.1642777.01409097.3342335.02300031.5295038.04449816.9749902.2074067 1.5044826.34431497 1.8568557.18140643.4667345.39814147.7998952.74805345 1.1498071.34991198.3499517.68307264.5666471 1.14980718.7480535.35237307.1369083.88190521.2998565 1.85689533.344315.1952409.0089093.36517007.0165186.52942506.0230039l.19563917.007254c.58628751.0202109 1.20083855.026766 2.7598622.0278749h1.1118237c1.5590237-.0011089 2.1735747-.007664 2.7598622-.0278749l.1956392-.007254c.164255-.0064853.3341841-.0140946.529425-.0230039.9749902-.0444585 1.5044826-.2074067 1.8568557-.344315.4667742-.1814064.7999349-.3981018 1.1498468-.7480535.349912-.3499119.5666074-.6830726.7480535-1.1498071.1369083-.3523731.2998168-.8818655.344315-1.8568954.008902-.1952629.0165053-.3652128.0229856-.5294856l.0072487-.1956591c.0179523-.5211933.0251253-1.0646827.0272763-2.2739015l.0005825-.4859198c.0001232-.1732132.0001792-.358085.0001792-.5558722l-.0000434-.2871472c-.0000294-.0925917-.0000742-.1821116-.0001358-.2687169l-.0005825-.4859129c-.002151-1.20920232-.009324-1.7526891-.0272763-2.27389376l-.0072487-.19566398c-.0064803-.16427743-.0140836-.33423328-.0229856-.52950359-.0444982-.97499012-.2074067-1.50448256-.344315-1.85685563-.1814461-.46677424-.3981415-.79989521-.7480535-1.14984688-.3499119-.34991198-.6830726-.56660732-1.1498468-.74801376-.3523731-.13694796-.8818655-.2998565-1.8568557-.34435466-.1952703-.00890934-.3652248-.01651729-.5295002-.02300031z">
+                    </path>
+                    <path
+                      d="m9.9999802 6.66666667c-1.840938 0-3.33335323 1.49237553-3.33335323 3.33331353 0 1.8409379 1.49241523 3.3333531 3.33335323 3.3333531 1.8409379 0 3.3333531-1.4924152 3.3333531-3.3333531 0-1.840938-1.4924152-3.33331353-3.3333531-3.33331353zm0-1.80179859c2.8360534 0 5.135112 2.29905863 5.135112 5.13511212 0 2.8360931-2.2990586 5.1351517-5.135112 5.1351517-2.83605349 0-5.13515181-2.2990586-5.13515181-5.1351517 0-2.83605349 2.29909832-5.13511212 5.13515181-5.13511212z">
+                    </path>
+                    <path
+                      d="m15.3380174 3.46199694c-.6627488 0-1.2000215.53723298-1.2000215 1.19998174s.5372727 1.19998174 1.2000215 1.19998174c.6627487 0 1.1999817-.53723298 1.1999817-1.19998174s-.537233-1.19998174-1.1999817-1.19998174z">
+                    </path>
+                  </g>
+                </svg></a></li>
+            <li><a title="Anar a YouTube" href="https://www.youtube.com/channel/UC_r4iEfF8Nx6IAIZydux7yg"
+                target="follow" rel="nofollow"><svg height="16" viewBox="0 0 22 16" width="22"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <g fill="none" fill-rule="evenodd" transform="translate(.000037 -.000024)">
+                    <path
+                      d="m21.0850056 2.36922136c-.247653-.93261402-.9772748-1.66700779-1.9040156-1.91625139-1.6792436-.45296997-8.4134705-.45296997-8.4134705-.45296997s-6.73422695 0-8.41359291.45296997c-.92661847.2492436-1.65636263.98363737-1.90401558 1.91625139-.44991101 1.69025584-.44991101 5.21698554-.44991101 5.21698554s0 3.5266073.44991101 5.2171079c.24765295.9324917.97739711 1.6668854 1.90401558 1.9162514 1.67936596.4528476 8.41359291.4528476 8.41359291.4528476s6.7342269 0 8.4134705-.4528476c.9267408-.249366 1.6563626-.9837597 1.9040156-1.9162514.4500333-1.6905006.4500333-5.2171079.4500333-5.2171079s0-3.5267297-.4500333-5.21698554"
+                      fill="#f00"></path>
+                    <path d="m8.5650356 10.7882102 5.6284761-3.20186871-5.6284761-3.20211346z" fill="#fff"></path>
+                  </g>
+                </svg></a></li>
+            <li><a title="Anar a RSS" href="/rss/" target="follow" rel="nofollow"><svg height="24" viewBox="0 0 24 24"
+                  width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m5.295 15.404c1.267 0 2.295 1.029 2.295 2.298 0 1.27-1.028 2.298-2.295 2.298-1.268 0-2.295-1.029-2.295-2.298s1.027-2.298 2.295-2.298zm-.622-6.116c5.016 0 9.096 4.086 9.096 9.108 0 .87-.704 1.574-1.572 1.574-.869 0-1.573-.705-1.573-1.574 0-3.286-2.67-5.96-5.95-5.96-.869 0-1.573-.704-1.573-1.574s.704-1.574 1.572-1.574zm-.047-6.288c8.477 0 15.374 6.907 15.374 15.396 0 .87-.704 1.574-1.572 1.574-.869 0-1.573-.705-1.573-1.574 0-6.753-5.486-12.247-12.23-12.247-.868 0-1.572-.705-1.572-1.574 0-.87.704-1.575 1.573-1.575z"
+                    fill="#eb5e09"></path>
+                </svg></a></li>
+          </ul>
+        </div>
+        <div class="apps">
+          <div class="header">Descubre nuestras apps:</div>
+          <ul class="footer-list">
+            <li><a title="App Apple"
+                href="https://apps.apple.com/pa/app/tvn-noticias-panam%C3%A1/id494735235?platform=iphone"
+                target="_blank" rel="noopener" class="ios"><svg height="21" viewBox="0 0 17 21" width="17"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m17.1978816 12.15664c.0293387 3.1779648 2.7717363 4.2355114 2.8021184 4.2490096-.0231883.074584-.4381894 1.5071075-1.4448254 2.9868019-.8701924 1.2792708-1.7733375 2.5538553-3.1960578 2.5802531-1.397965.0259091-1.8474887-.8338356-3.4457585-.8338356-1.5977869 0-2.09722829.8074357-3.42055785.8597447-1.37328603.0522707-2.41902892-1.3833619-3.29645305-2.6579464-1.79290996-2.6072057-3.16306415-7.3673507-1.32329341-10.58052626.91395886-1.59567603 2.54727241-2.60612471 4.32008825-2.63203578 1.34853177-.02587354 2.62138546.91254264 3.44576006.91254264.8238519 0 2.37064-1.12852769 3.9967214-.96278913.6807332.02849813 2.5915624.27658267 3.8185584 2.08306922-.0988656.06164698-2.2800104 1.33881702-2.2563005 3.99571501m-2.6273136-7.80367827c.7290868-.8876817 1.2198042-2.12341671 1.0859312-3.35296473-1.0509238.04248424-2.3217268.70439399-3.075531 1.59158731-.6755534.785651-1.2671863 2.04313553-1.1075535 3.24834814 1.171378.09115691 2.3680307-.59872452 3.0971533-1.48696928"
+                    fill="#50514f" transform="translate(-3 -1)"></path>
+                </svg></a></li>
+            <li><a title="App Android" href="https://play.google.com/store/apps/details?id=com.tvn2.app" target="_blank"
+                rel="noopener" class="android"><svg height="24" viewBox="0 0 24 24" width="24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m17.367 8.896v8.225c0 .715-.542 1.3-1.24 1.365l-.132.007-.91-.001v2.807c0 .664-.496 1.2-1.141 1.265l-.131.007c-.665 0-1.202-.496-1.266-1.141l-.007-.131v-2.807h-1.696v2.807c0 .664-.495 1.2-1.14 1.265l-.132.007c-.664 0-1.2-.496-1.265-1.141l-.007-.131v-2.807h-.91c-.715 0-1.3-.541-1.365-1.239l-.007-.132v-8.225zm-13.095-.218c.709 0 1.273.564 1.273 1.272v5.3c0 .709-.564 1.273-1.273 1.273-.708 0-1.272-.564-1.272-1.273v-5.3c0-.708.564-1.272 1.272-1.272zm14.84 0c.71 0 1.273.564 1.273 1.272v5.3c0 .709-.564 1.273-1.272 1.273-.709 0-1.273-.564-1.273-1.273v-5.3c0-.708.564-1.272 1.273-1.272zm-3.896-6.678c.03 0 .059.008.086.023.073.04.106.115.091.19l-.02.056-.897 1.62c1.656.86 2.795 2.467 2.886 4.325l.006.234h-11.35c.003-1.879 1.076-3.526 2.688-4.448l.204-.112-.896-1.62c-.05-.09-.021-.194.07-.245.027-.015.055-.023.085-.023.049 0 .095.018.13.053l.03.04.908 1.637c.743-.33 1.576-.514 2.455-.514.77 0 1.504.142 2.173.398l.283.116.908-1.636c.034-.062.095-.095.16-.094zm-6.142 3.424c-.26 0-.474.214-.474.473 0 .26.215.474.474.474s.473-.215.473-.474-.214-.473-.473-.473zm5.237 0c-.259 0-.473.214-.473.473 0 .26.214.474.473.474.26 0 .474-.215.474-.474s-.215-.473-.474-.473z"
+                    fill="#3ddd84"></path>
+                </svg></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="explore">
+        <div class="footer-nav">
+          <ul>
+            <li><a title="Gente TVN" href="https://www.tvn-2.com/gente-tvn/">Gente TVN</a></li>
+            <li><a title="Política de privacidad" href="https://www.tvn-2.com/politica-de-privacidad/">Política de
+                privacidad</a></li>
+            <li><a title="Términos de uso" href="https://www.tvn-2.com/terminos-de-uso/">Términos de uso</a></li>
+            <li><a title="Acerca de TVN" href="https://www.tvn-2.com/quienes-somos/">Acerca de TVN</a></li>
+            <li><a title="Contáctenos" href="https://www.tvn-2.com/contacto/">Contáctenos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="information">
+        <div class="legal"><a title="BBNX" href="/"><svg width="48" height="48" viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M23.885 0C10.679 0 0 10.73 0 24c0 13.236 10.68 24 23.885 24 13.172 0 23.884-10.73 23.884-24-.033-13.27-10.712-24-23.884-24zM38.37 31.549v-7.414c0-1.794-.843-2.674-2.594-2.674-1.786 0-3.302 1.016-3.302 3.791v6.33h-3.84V20.379H28.6l-4.851 11.17h-4.38l-4.21-10.222h-3.336v6.093c0 1.015.27 1.354 1.28 1.354.674 0 1.28-.034 1.887-.102v2.878c-.707.101-2.156.237-3.032.237-3.638 0-4.009-1.524-4.009-3.86v-6.6H5.56v-2.877h2.425v-4.063h3.84v4.063h6.536l3.2 9.173 3.538-9.173h7.276v1.895h.034c.707-1.083 2.526-2.234 4.783-2.234 1.988 0 5.02.846 5.02 4.705v8.7h-3.84v.034z"
+                fill="#058" fill-rule="nonzero"></path>
+            </svg></a></div>
+        <div class="copyright">
+          © Televisora Nacional, S.A 2022, todos los derechos reservados
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--Fin Footer-->
   <script>
     let filterButtonContentJSON = '{}';
 
