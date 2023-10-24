@@ -1,3 +1,7 @@
 .top_container{
     display:none !important;
 }
+
+.bbnx-footer .content .social{
+    display:none !important;
+}
