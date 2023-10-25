@@ -50,3 +50,10 @@
     border-bottom-left-radius: 10px !important;
     box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.27) !important;
 }
+
+.content .content-title{
+    padding-top: 10px !important;
+    padding-right: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 10px !important;
+}
