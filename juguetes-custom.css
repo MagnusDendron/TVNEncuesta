@@ -18,7 +18,6 @@
     margin-left: initial !important;
     margin-right: initial !important;
     background-color: #008996 !important;
-    background-image: url() !important;
     background-repeat: no-repeat !important;
     background-position: top center !important;
     background-size: contain !important;
@@ -43,7 +42,7 @@
     border-radius: inherit !important;
 }
 
-.content .medium .text-bottom{
+.content {
     background-color: white !important;
     border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important;
