@@ -62,3 +62,11 @@
     margin-top: 0px !important;
     margin: 0 0 0 0 !important;
 }
+
+.content-wrapper picture{
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+    box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.27); 
+}
