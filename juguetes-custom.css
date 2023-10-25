@@ -13,3 +13,14 @@
 .bbnx-main{
     background-color: #f3fdf5 !important; 
 }
+
+.guten-element{
+    margin-left: initial !important;
+    margin-right: initial !important;
+    background-color: #008996 !important;
+    background-image: url() !important;
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+    background-size: contain !important;
+    border-radius: 5px !important;
+}
