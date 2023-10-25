@@ -5,3 +5,7 @@
 .bbnx-footer .content .social{
     display:none !important;
 }
+
+.content-body{
+    background-color: #f3fdf5;
+}
