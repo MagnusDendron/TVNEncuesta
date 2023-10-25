@@ -23,4 +23,22 @@
     background-position: top center !important;
     background-size: contain !important;
     border-radius: 5px !important;
+    box-sizing: border-box;
+    transition: background 0.3s ease 0s, border 0.3s ease 0s, border-radius 0.3s ease 0s, box-shadow 0.3s ease 0s;
+}
+
+.calcula{
+    text-align: center;
+    width: 100%;
+    font-style: italic;
+    color: white;
+}
+
+.gutten-background-overlay{
+    height: 100% !important;
+    width: 100% !important;
+    top: 0px !important;
+    left: 0px  !important;
+    position: absolute !important;
+    border-radius: inherit !important;
 }
