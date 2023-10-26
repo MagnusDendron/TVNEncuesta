@@ -82,13 +82,14 @@
 }
 
 .btn{
-    background-color: teal;
-    color: #fff;
-    transition: all .7s;
+    background-color: teal !important;
+    color: #fff !important;
+    transition: all .7s !important;
+    font-weight: bold !important;
   }
 
 .btn:hover{
-    color: teal;
-    background-color: #fff;
-    border-color: teal;
+    color: teal !important;
+    background-color: #fff !important;
+    border-color: teal !important;
   }  
