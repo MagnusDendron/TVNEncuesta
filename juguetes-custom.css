@@ -27,10 +27,11 @@
 }
 
 .calcula{
-    text-align: center;
-    width: 100%;
-    font-style: italic;
-    color: white;
+    text-align: center !important;
+    width: 100% !important;
+    font-style: italic !important;
+    color: white !important;
+    font-weight: bold !important;
 }
 
 .gutten-background-overlay{
@@ -72,13 +73,13 @@
 }
 
 #cabezote-personalizado{
-    background-color: #008996;
+    background-color: #008996 !important;
 }
 
 #header-sub{
-    display: flex;
-    align-items: center;
-    min-width: 0;
+    display: flex !important;
+    align-items: center !important;
+    min-width: 0 !important;
 }
 
 .btn{
@@ -99,5 +100,13 @@
   }
 
   .topic_nav {
+    display: none !important;
+  }
+
+  h2{
+    font-weight: bold;
+  }
+
+  .kicker{
     display: none !important;
   }
