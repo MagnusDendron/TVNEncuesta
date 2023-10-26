@@ -93,3 +93,11 @@
     background-color: #fff !important;
     border-color: teal !important;
   }  
+
+ .section-opening {
+    display: none !important;
+  }
+
+  .topic_nav {
+    display: none !important;
+  }
