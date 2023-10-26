@@ -80,3 +80,15 @@
     align-items: center;
     min-width: 0;
 }
+
+.btn{
+    background-color: teal;
+    color: #fff;
+    transition: all .7s;
+  }
+
+.btn:hover{
+    color: teal;
+    background-color: #fff;
+    border-color: teal;
+  }  
